@@ -18,7 +18,7 @@ from aiomqtt.types import PayloadType
 
 pytestmark = pytest.mark.anyio
 
-HOSTNAME = "test.mosquitto.org"
+HOSTNAME = "localhost"
 OS_PY_VERSION = sys.platform + "_" + ".".join(map(str, sys.version_info[:2]))
 TOPIC_HEADER = OS_PY_VERSION + "/tests/aiomqtt/"
 

@@ -22,6 +22,13 @@ jobs:
           - os: windows-latest
             python-version: "3.11"
     runs-on: ${{ matrix.os }}
+    services:
+      emqx:
+        image: emqx/emqx:latest
+        ports:
+          - 1883:1883
+          - 8883:8883
+          - 8080:8083
     defaults:
       run:
         shell: bash
