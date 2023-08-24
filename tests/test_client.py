@@ -251,7 +251,7 @@ async def test_client_tls_params() -> None:
         HOSTNAME,
         8883,
         tls_params=TLSParameters(
-            ca_certs=str(Path.cwd() / "tests" / "local-client-cert.pem")
+            certfile=str(Path.cwd() / "tests" / "local-client-cert.pem")
         ),
     ) as client:
         async with anyio.create_task_group() as tg:
