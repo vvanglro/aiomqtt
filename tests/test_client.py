@@ -251,7 +251,7 @@ async def test_client_tls_params() -> None:
         HOSTNAME,
         8883,
         tls_params=TLSParameters(
-            ca_certs=str(Path.cwd() / "tests" / "mosquitto.org.crt")
+            ca_certs=str(Path.cwd() / "tests" / "local-client-cert.pem")
         ),
     ) as client:
         async with anyio.create_task_group() as tg:
@@ -346,7 +346,7 @@ async def test_client_websockets() -> None:
 
     async with Client(
         HOSTNAME,
-        8080,
+        8083,
         transport="websockets",
         websocket_path="/",
         websocket_headers={"foo": "bar"},
